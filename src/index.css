@@ -1,1 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/**************************/
+/**** RESET ****/
+/**************************/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/**************************/
+/**** ROOT ****/
+/**************************/
+:root {
+  /* color */
+  --background-color: #000;
+  --title-color: #fff;
+  --subtitle-color: #aeaeae;
+  --gray-hover-color: #f0f0f0;
+  /* size */
+  --title-size: 15px;
+  --subtitle-size: 13px;
+  /* weight */
+  --bold-weight: 700;
+}
+
+/**************************/
+/**** GENERAL STYLES ****/
+/**************************/
+body {
+  background-color: var(--background-color);
+  color: var(--title-color);
+  font-family: 'Montserrat', serif;
+}
+a {
+  color: inherit;
+  text-decoration-line: none;
+}
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+}
+
+/**************************/
+/**** HEADER ****/
+/**************************/
+.header {
+  padding: 16px 26px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+/* logo link */
+.header__logoLink {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  color: var(--title-color);
+}
+.header__logoLink:hover {
+  color: var(--gray-hover-color);
+}
+.header__logoLink svg {
+  width: 34px;
+  height: 34px;
+}
+.header__logoLink h1 {
+  font-size: 16px;
+}
+/* side links */
+.header__sideLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header__sideLinks a:first-child p {
+  color: var(--subtitle-color);
+  font-size: var(--subtitle-size);
+  font-weight: var(--bold-weight);
+  padding: 0 5px;
+  text-align: center;
+}
+.header__sideLinks a:first-child p:hover {
+  color: var(--title-color);
+  transform: scale(1.05);
+}
+.header__sideLinks--buttonStyle p {
+  background-color: var(--title-color);
+  color: var(--background-color);
+  font-size: var(--title-size);
+  font-weight: var(--bold-weight);
+  padding: 14px 28px;
+  border-radius: 50px;
+}
+.header__sideLinks--buttonStyle p:hover {
+  transform: scale(1.1);
+  background-color: var(--gray-hover-color);
+}
