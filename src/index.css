@@ -122,12 +122,13 @@ img {
 .main {
   padding: 25px;
   margin: 0 10px 10px 10px;
-  background-image: linear-gradient(to top, #121212 80%, #222);
+  background-image: linear-gradient(to top, #121212 70%, #222);
   border-radius: 10px;
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 40px;
+  overflow-y: scroll;
 }
 .big-top-padding {
   padding-top: 50px;
@@ -141,6 +142,7 @@ img {
 .item-section__header-title {
   font-size: var(--title-section-size);
   font-weight: var(--bold-weight);
+  margin: 10px 0;
 }
 .item-section__header-title:hover {
   text-decoration-line: underline;
@@ -148,7 +150,7 @@ img {
 }
 .item-section__header-title--bigger {
   font-size: 28px;
-  margin: 28px 0;
+  margin: 23px 0;
 }
 .item-section__header a p {
   color: var(--subtitle-color);
@@ -177,12 +179,15 @@ img {
 .bigger-items {
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
+.bigger-items .item-section__single-item {
+  margin: 12px 0;
+}
 .item-section__single-item {
   padding: 15px 12px;
   border-radius: 8px;
 }
 .item-section__single-item:hover {
-  background-image: linear-gradient(to bottom, transparent, #1f1f1f);
+  background-image: linear-gradient(to bottom, #1d1d1d, #1f1f1f);
 }
 /* img container */
 .item-section__single-item:hover img {
