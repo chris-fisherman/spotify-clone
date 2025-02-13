@@ -2,20 +2,37 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import SingleItem from './SingleItem';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 const ItemList = ({ title, items, itemsArray, path, idPath }) => {
+  const { pathname } = useLocation();
+  const isHome = pathname === '/';
+  const finalItems = isHome ? items : Infinity;
+  const listClassName = isHome ? <></> : 'bigger-items';
   return (
     <div className='item-section'>
       <header className='item-section__header'>
-        <h2>Popular {title}</h2>
-        <Link to={`/${path}`} title={`All ${path}`}>
-          <p>Show all</p>
-        </Link>
+        {isHome ? (
+          <Link to={`/${path}`} className='item-section__header-title'>
+            Popular {title}
+          </Link>
+        ) : (
+          <h2 className='item-section__header-title--bigger'>
+            Popular {title}
+          </h2>
+        )}
+
+        {isHome ? (
+          <Link to={`/${path}`} title={`All ${path}`}>
+            <p>Show all</p>
+          </Link>
+        ) : (
+          <></>
+        )}
       </header>
-      <ul className='item-section__list'>
+      <ul className={`item-section__list ${listClassName}`}>
         {itemsArray
-          .filter((currentValue, index) => index < items)
+          .filter((currentValue, index) => index < finalItems)
           .map((currObject, index) => (
             <SingleItem
               idPath={idPath}

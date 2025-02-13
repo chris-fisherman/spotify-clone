@@ -33,7 +33,7 @@
 /**** GENERAL STYLES ****/
 /**************************/
 #root {
-  /* height: 100svh; */
+  height: 100svh;
   display: flex;
   flex-direction: column;
 }
@@ -129,18 +129,26 @@ img {
   flex-direction: column;
   gap: 40px;
 }
+.big-top-padding {
+  padding-top: 50px;
+}
 /* section header */
 .item-section__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.item-section__header h2 {
+.item-section__header-title {
   font-size: var(--title-section-size);
+  font-weight: var(--bold-weight);
 }
-.item-section__header h2:hover {
+.item-section__header-title:hover {
   text-decoration-line: underline;
   cursor: pointer;
+}
+.item-section__header-title--bigger {
+  font-size: 28px;
+  margin: 28px 0;
 }
 .item-section__header a p {
   color: var(--subtitle-color);
@@ -165,6 +173,9 @@ img {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
   margin: 0 -10px;
+}
+.bigger-items {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
 .item-section__single-item {
   padding: 15px 12px;
