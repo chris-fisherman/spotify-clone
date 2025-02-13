@@ -1,5 +1,4 @@
-// eslint-disable-next-line no-unused-vars
-const artistArray = [
+export const artistArray = [
   {
     id: 1,
     image: 'https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4',
