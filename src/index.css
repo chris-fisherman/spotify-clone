@@ -14,6 +14,8 @@
 /**************************/
 :root {
   /* color */
+  --main-color: #1dd45e;
+  --main-hover-color: #3adf74;
   --background-color: #000;
   --title-color: #fff;
   --subtitle-color: #aeaeae;
@@ -24,6 +26,7 @@
   --title-section-size: 22px;
   /* weight */
   --bold-weight: 700;
+  --semibold-weight: 500;
 }
 
 /**************************/
@@ -47,6 +50,12 @@ button {
   font-family: inherit;
   background: none;
   border: none;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 100%;
 }
 
 /**************************/
@@ -116,25 +125,26 @@ button {
   border-radius: 10px;
   flex: 1;
 }
-.main__popularArtistsSection {
+/* section header */
+.item-section__header {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.main__popularArtistsSection h2 {
+.item-section__header h2 {
   font-size: var(--title-section-size);
 }
-.main__popularArtistsSection h2:hover {
+.item-section__header h2:hover {
   text-decoration-line: underline;
   cursor: pointer;
 }
-.main__popularArtistsSection a p {
+.item-section__header a p {
   color: var(--subtitle-color);
   font-size: var(--subtitle-size);
   font-weight: var(--bold-weight);
   position: relative;
 }
-.main__popularArtistsSection a p::after {
+.item-section__header a p::after {
   content: '';
   position: absolute;
   background-color: var(--title-color);
@@ -143,6 +153,59 @@ button {
   width: 0;
   height: 0.5px;
 }
-.main__popularArtistsSection a p:hover::after {
+.item-section__header a p:hover::after {
   width: 100%;
+}
+/* section list */
+.item-section__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+.item-section__item {
+  padding: 15px 12px;
+  border-radius: 8px;
+}
+.item-section__item:hover {
+  background-image: linear-gradient(to bottom, transparent, #282828);
+}
+/* img container */
+.item-section__item:hover img {
+  box-shadow: 0 0 30px #121212;
+}
+.item-section__img-container {
+  position: relative;
+}
+.item-section__img-container img {
+  border-radius: 100%;
+}
+.item-section__img-container svg {
+  display: none;
+}
+.item-section__item:hover svg {
+  display: block;
+  position: absolute;
+  bottom: 12px;
+  right: 5px;
+  width: 50px;
+  height: 50px;
+  color: var(--main-color);
+}
+.item-section__img-container svg:hover {
+  color: var(--main-hover-color);
+  transform: scale(1.05);
+}
+/* texts container */
+.item-section__texts h3 {
+  font-size: 14px;
+  font-weight: var(--semibold-weight);
+  width: fit-content;
+  margin: 8px 0 5px;
+}
+.item-section__texts h3:hover {
+  text-decoration-line: underline;
+}
+.item-section__texts p {
+  font-size: var(--subtitle-size);
+  font-weight: var(--semibold-weight);
+  color: var(--subtitle-color);
 }
