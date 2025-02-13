@@ -21,6 +21,7 @@
   /* size */
   --title-size: 15px;
   --subtitle-size: 13px;
+  --title-section-size: 22px;
   /* weight */
   --bold-weight: 700;
 }
@@ -28,6 +29,11 @@
 /**************************/
 /**** GENERAL STYLES ****/
 /**************************/
+#root {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
 body {
   background-color: var(--background-color);
   color: var(--title-color);
@@ -82,8 +88,6 @@ button {
   color: var(--subtitle-color);
   font-size: var(--subtitle-size);
   font-weight: var(--bold-weight);
-  padding: 0 5px;
-  text-align: center;
 }
 .header__sideLinks a:first-child p:hover {
   color: var(--title-color);
@@ -100,4 +104,45 @@ button {
 .header__sideLinks--buttonStyle p:hover {
   transform: scale(1.1);
   background-color: var(--gray-hover-color);
+}
+
+/**************************/
+/**** MAIN ****/
+/**************************/
+.main {
+  padding: 25px;
+  margin: 0 10px 10px;
+  background-image: linear-gradient(to bottom, #212121, #121212);
+  border-radius: 10px;
+  flex: 1;
+}
+.main__popularArtistsSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main__popularArtistsSection h2 {
+  font-size: var(--title-section-size);
+}
+.main__popularArtistsSection h2:hover {
+  text-decoration-line: underline;
+  cursor: pointer;
+}
+.main__popularArtistsSection a p {
+  color: var(--subtitle-color);
+  font-size: var(--subtitle-size);
+  font-weight: var(--bold-weight);
+  position: relative;
+}
+.main__popularArtistsSection a p::after {
+  content: '';
+  position: absolute;
+  background-color: var(--title-color);
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+}
+.main__popularArtistsSection a p:hover::after {
+  width: 100%;
 }
