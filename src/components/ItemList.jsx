@@ -2,15 +2,16 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
 import SingleItem from './SingleItem';
+import { Link } from 'react-router-dom';
 
 const ItemList = ({ title, items, itemsArray, path, idPath }) => {
   return (
     <div className='item-section'>
       <header className='item-section__header'>
         <h2>Popular {title}</h2>
-        <a href={`/${path}`} title={`All ${path}`}>
+        <Link to={`/${path}`} title={`All ${path}`}>
           <p>Show all</p>
-        </a>
+        </Link>
       </header>
       <ul className='item-section__list'>
         {itemsArray

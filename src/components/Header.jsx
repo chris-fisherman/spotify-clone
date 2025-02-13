@@ -2,25 +2,26 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className='header'>
-      <a className='header__logoLink' href='/' title='Home Page'>
+      <Link to='/' title='Home Page' className='header__logoLink'>
         <FontAwesomeIcon icon={faSpotify} />
         <h1>Spotify Clone</h1>
-      </a>
+      </Link>
       <div className='header__sideLinks'>
-        <a href='#' title='This is just an example link'>
+        <Link to='#' title='This is just an example link'>
           <p>Register now</p>
-        </a>
-        <a
-          className='header__sideLinks--buttonStyle'
-          href='#'
+        </Link>
+        <Link
+          to='#'
           title='Another example link'
+          className='header__sideLinks--buttonStyle'
         >
           <p>Login</p>
-        </a>
+        </Link>
       </div>
     </header>
   );
