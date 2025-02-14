@@ -201,6 +201,9 @@ img {
   aspect-ratio: 1/1;
   object-fit: cover;
 }
+.item-section__img-container .square-border-img {
+  border-radius: 5px;
+}
 .item-section__img-container svg {
   display: none;
 }
