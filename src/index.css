@@ -37,6 +37,13 @@
   display: flex;
   flex-direction: column;
 }
+main {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  overflow-y: hidden;
+  flex: 1;
+}
 body {
   background-color: var(--background-color);
   color: var(--title-color);
@@ -119,16 +126,24 @@ img {
 /**************************/
 /**** HOME MAIN ****/
 /**************************/
-.main {
+.main,
+.aside-library {
   padding: 25px;
-  margin: 0 10px 10px 10px;
   background-image: linear-gradient(to top, #121212 70%, #222);
   border-radius: 10px;
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 40px;
   overflow-y: scroll;
+}
+.main {
+  margin: 0 10px 10px 0;
+  width: 75%;
+}
+.aside-library {
+  overflow: hidden;
+  margin: 0 0 10px 10px;
+  width: 25%;
 }
 .big-top-padding {
   padding-top: 50px;
@@ -240,13 +255,14 @@ img {
 /**** ARTIST PAGE ****/
 /**************************/
 .artist-main {
-  margin: 0 10px 10px 10px;
+  margin: 0 10px 10px 0;
   background-image: linear-gradient(to top, #121212 70%, #222);
   border-radius: 10px;
   flex: 1;
   display: flex;
   flex-direction: column;
   overflow-y: scroll;
+  width: 75%;
 }
 .artist-main__img {
   position: sticky;
