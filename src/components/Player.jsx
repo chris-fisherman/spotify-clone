@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +9,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Player = () => {
+const Player = ({ duration }) => {
   return (
     <div className='player-container'>
       <div className='player-controllers'>
@@ -28,7 +29,7 @@ const Player = () => {
         <div className='player-bar'>
           <div className='player-bar__progress'></div>
         </div>
-        <p>2:30</p>
+        <p>{duration}</p>
       </div>
     </div>
   );

@@ -1,13 +1,26 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import { React, useState } from 'react';
 import SongItem from './SongItem';
 
 const SongsList = ({ songsArray }) => {
-  const itemsNumber = 5;
+  const [itemsNumber, setItemsNumber] = useState(5);
+  const [show, setShow] = useState('');
+
+  const seeMore = () => {
+    setItemsNumber(itemsNumber + 5);
+    setShow('show');
+  };
+
+  const seeLess = () => {
+    setItemsNumber(itemsNumber - 5);
+    setShow('');
+  };
+
   return (
     <section className='song-list'>
       <h3 className='song-list__title'>Populars</h3>
+
       <ul className='song-list__list'>
         {songsArray
           .filter((currentValue, index) => index < itemsNumber)
@@ -15,7 +28,14 @@ const SongsList = ({ songsArray }) => {
             <SongItem {...currentSongObj} index={index} key={index} />
           ))}
       </ul>
-      <p className='song-list__see-more'>See more</p>
+
+      <p className={`song-list__see-more ${show}`} onClick={seeMore}>
+        See more
+      </p>
+
+      <p className={`song-list__see-less ${show}`} onClick={seeLess}>
+        See less
+      </p>
     </section>
   );
 };
