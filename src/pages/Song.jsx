@@ -3,6 +3,9 @@ import React from 'react';
 import AsideLibrary from '../components/AsideLibrary';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import Player from '../components/Player';
+import WhiteButton from '../components/WhiteButton';
+import SongsList from '../components/SongsList';
 
 // const Header = styled.header`
 //   &:before {
@@ -89,6 +92,35 @@ const Song = () => {
           </section>
           <HeaderBackground />
         </header>
+
+        <div className='song-body'>
+          <Player />
+
+          <section className='song-signin-article'>
+            <h3>Sign in to see the lyrics and listen to the full song</h3>
+            <div className='song-signin-article__buttons'>
+              <Link to='#' title='Example'>
+                Sign in
+              </Link>
+              <WhiteButton body={'Register'} />
+            </div>
+          </section>
+
+          <Link to={'/artist/1'} className='song-artist-section'>
+            <img
+              src={
+                'https://i.scdn.co/image/ab676161000051744dcd8a3bff84cd7703892cf4'
+              }
+              alt='Image'
+            />
+            <div className='song-artist-section__texts'>
+              <p>Artist</p>
+              <p>Henrique & Juliano</p>
+            </div>
+          </Link>
+
+          <SongsList />
+        </div>
       </div>
     </main>
   );

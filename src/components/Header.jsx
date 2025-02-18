@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpotify } from '@fortawesome/free-brands-svg-icons';
 import { Link } from 'react-router-dom';
+import WhiteButton from './WhiteButton';
 
 const Header = () => {
   return (
@@ -15,13 +16,7 @@ const Header = () => {
         <Link to='#' title='This is just an example link'>
           <p>Register now</p>
         </Link>
-        <Link
-          to='#'
-          title='Another example link'
-          className='header__sideLinks--buttonStyle'
-        >
-          <p>Login</p>
-        </Link>
+        <WhiteButton body={'Login'} />
       </div>
     </header>
   );
