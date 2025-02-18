@@ -305,7 +305,7 @@ img {
   background-color: #121212;
   background-image: linear-gradient(to top, #121212 70%, #3adf7416);
   padding: 25px;
-  height: 100%;
+  height: fit-content;
 }
 .artist-body__btn-container {
   display: flex;
@@ -365,7 +365,7 @@ img {
   font-size: var(--subtitle-size);
   font-weight: var(--bold-weight);
   color: var(--subtitle-color);
-  margin: 0 20px;
+  margin: 0 20px 25px 20px;
 }
 .song-list__see-more:hover {
   color: var(--title-color);
@@ -435,10 +435,14 @@ img {
   text-decoration-line: underline;
 }
 .song-item__scnd-container {
-  gap: 30px;
+  gap: 160px;
 }
 .song-item__scnd-container div {
-  gap: 10px;
+  gap: 20px;
+}
+.song-item__scnd-container div p {
+  width: 40px;
+  text-align: end;
 }
 .song-item__scnd-container svg {
   color: transparent;
