@@ -12,7 +12,7 @@ const SongsList = ({ songsArray }) => {
     setShow('show');
   };
 
-  const seeLess = () => {
+  const showLess = () => {
     setItemsNumber(itemsNumber - 5);
     setShow('');
   };
@@ -33,8 +33,8 @@ const SongsList = ({ songsArray }) => {
         See more
       </p>
 
-      <p className={`song-list__see-less ${show}`} onClick={seeLess}>
-        See less
+      <p className={`song-list__see-less ${show}`} onClick={showLess}>
+        Show less
       </p>
     </section>
   );

@@ -20,7 +20,19 @@ const Song = () => {
     (currentArtistObj, index) => currentArtistObj.name === artist
   )[0];
 
-  console.log(artistObj);
+  const songsArrayFromArtist = songsArray.filter(
+    (currentSongObj) => currentSongObj.artist === artist
+  );
+
+  const randomIndex = Math.floor(
+    Math.random() * (songsArrayFromArtist.length - 1)
+  );
+  const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
+
+  const randomIndex2 = Math.floor(
+    Math.random() * (songsArrayFromArtist.length - 1)
+  );
+  const randomIdFromArtist2 = songsArrayFromArtist[randomIndex2].id;
 
   const ImgShadow = styled.div`
     &:after {
@@ -81,7 +93,11 @@ const Song = () => {
         </header>
 
         <div className='song-body'>
-          <Player duration={duration} />
+          <Player
+            duration={duration}
+            randomIdFromArtist={randomIdFromArtist}
+            randomIdFromArtist2={randomIdFromArtist2}
+          />
 
           <section className='song-signin-article'>
             <h3>Sign in to see the lyrics and listen to the full song</h3>

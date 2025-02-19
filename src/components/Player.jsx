@@ -9,18 +9,26 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const Player = ({ duration }) => {
+const Player = ({ duration, randomIdFromArtist, randomIdFromArtist2 }) => {
   return (
     <div className='player-container'>
       <div className='player-controllers'>
-        <Link to={'/song/1'} className='player-controllers__icon'>
-          <FontAwesomeIcon icon={faBackwardStep} title='Previous song' />
+        <Link
+          to={`/song/${randomIdFromArtist}`}
+          className='player-controllers__icon'
+          title='Play a random song'
+        >
+          <FontAwesomeIcon icon={faBackwardStep} />
         </Link>
         <button className='player-controllers__icon--play'>
           <FontAwesomeIcon icon={faCirclePlay} title='Play' />
         </button>
-        <Link to={'/song/3'} className='player-controllers__icon'>
-          <FontAwesomeIcon icon={faForwardStep} title='Next song' />
+        <Link
+          to={`/song/${randomIdFromArtist2}`}
+          className='player-controllers__icon'
+          title='Play a random song'
+        >
+          <FontAwesomeIcon icon={faForwardStep} />
         </Link>
       </div>
 
