@@ -2,8 +2,11 @@
 /*** REQUIRE STATEMENTS ***/
 /******************************/
 /* files */
-import { artistArray } from '../../../front-end/src/assets/database/artists.js';
-import { songsArray } from '../../../front-end/src/assets/database/songs.js';
+// import { artistArray } from '../../../front-end/src/assets/database/artists.js';
+// import { songsArray } from '../../../front-end/src/assets/database/songs.js';
+/* endpoints */
+import artistsRoutes from './artistsRoutes.js';
+import songsRoutes from './songsRoutes.js';
 /* router */
 import express from 'express';
 const router = express();
@@ -15,12 +18,8 @@ router
   .get('/', (req, res) => {
     res.send(`We'll just use /artists and /songs`);
   })
-  .get('/artists', (req, res) => {
-    res.send(artistArray);
-  })
-  .get('/songs', (req, res) => {
-    res.send(songsArray);
-  });
+  .use('/artists', artistsRoutes)
+  .use('/songs', songsRoutes);
 
 /******************************/
 /*** EXPORT ***/
