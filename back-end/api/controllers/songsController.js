@@ -2,7 +2,7 @@
 /*** REQUIRE STATEMENTS ***/
 /******************************/
 /* database */
-import db from '../database/db-connection.js';
+import db from '../database/dbConnection.js';
 
 /******************************/
 /*** GET ALL SONGS ***/
