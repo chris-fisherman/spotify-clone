@@ -13,7 +13,7 @@ const Song = () => {
   const { id } = useParams();
 
   const { image, name, duration, artist, audio } = songsArray.filter(
-    (currentSongObj, index) => currentSongObj.id === Number(id)
+    (currentSongObj, index) => currentSongObj._id === id
   )[0];
 
   const artistObj = artistArray.filter(
@@ -27,12 +27,12 @@ const Song = () => {
   const randomIndex = Math.floor(
     Math.random() * (songsArrayFromArtist.length - 1)
   );
-  const randomIdFromArtist = songsArrayFromArtist[randomIndex].id;
+  const randomIdFromArtist = songsArrayFromArtist[randomIndex]._id;
 
   const randomIndex2 = Math.floor(
     Math.random() * (songsArrayFromArtist.length - 1)
   );
-  const randomIdFromArtist2 = songsArrayFromArtist[randomIndex2].id;
+  const randomIdFromArtist2 = songsArrayFromArtist[randomIndex2]._id;
 
   const ImgShadow = styled.div`
     &:after {
@@ -82,7 +82,7 @@ const Song = () => {
             <h2>{name}</h2>
             <div className='texts-container__below-texts'>
               <img src={artistObj.image} alt={`${artistObj.name} image`} />
-              <Link to={`/artist/${artistObj.id}`}>{artist}</Link>
+              <Link to={`/artist/${artistObj._id}`}>{artist}</Link>
               <span>•</span>
               <p>{name}</p>
               <span>•</span>
@@ -109,7 +109,7 @@ const Song = () => {
             </div>
           </section>
 
-          <Link to={`/artist/${artistObj.id}`} className='song-artist-section'>
+          <Link to={`/artist/${artistObj._id}`} className='song-artist-section'>
             <img src={artistObj.image} alt={`${artistObj.name} image`} />
             <div className='song-artist-section__texts'>
               <p>Artist</p>

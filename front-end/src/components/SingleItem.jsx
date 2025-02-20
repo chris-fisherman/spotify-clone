@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCirclePlay } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
-const SingleItem = ({ id, image, name, banner, artist, idPath }) => {
+const SingleItem = ({ _id, image, name, banner, artist, idPath }) => {
   const imgClassName = idPath === '/song' ? 'square-border-img' : <></>;
   return (
     <li className='item-section__single-item'>
-      <Link to={`${idPath}/${id}`}>
+      <Link to={`${idPath}/${_id}`}>
         <div className='item-section__img-container'>
           <img
             src={image}

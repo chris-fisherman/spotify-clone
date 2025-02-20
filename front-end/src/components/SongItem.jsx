@@ -7,10 +7,10 @@ import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 
-const SongItem = ({ image, name, duration, artist, audio, id, index }) => {
+const SongItem = ({ image, name, duration, artist, audio, _id, index }) => {
   return (
     <li>
-      <Link to={`/song/${id}`} className='song-item'>
+      <Link to={`/song/${_id}`} className='song-item'>
         <div className='song-item__frst-container'>
           <div
             className='frst-container__number-container'
