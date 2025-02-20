@@ -15,11 +15,11 @@ const router = express();
 /*** ROUTES ***/
 /******************************/
 router
-  .get('/', (req, res) => {
+  .get('/api/', (req, res) => {
     res.send(`We'll just use /artists and /songs`);
   })
-  .use('/artists', artistsRoutes)
-  .use('/songs', songsRoutes);
+  .use('/api/artists', artistsRoutes)
+  .use('/api/songs', songsRoutes);
 
 /******************************/
 /*** EXPORT ***/

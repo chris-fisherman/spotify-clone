@@ -1,8 +1,11 @@
+/* eslint-disable no-undef */
 /******************************/
 /*** REQUIRE STATEMENTS ***/
 /******************************/
+import 'dotenv/config';
 import axios from 'axios';
-const URL = 'http://localhost:3030';
+const NODE_ENV = process.env.NODE_ENV;
+const URL = NODE_ENV === 'development' ? 'http://localhost:3030/api' : '/api';
 
 /******************************/
 /*** API CONNECTION ***/
