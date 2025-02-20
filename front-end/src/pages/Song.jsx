@@ -97,6 +97,7 @@ const Song = () => {
             duration={duration}
             randomIdFromArtist={randomIdFromArtist}
             randomIdFromArtist2={randomIdFromArtist2}
+            audio={audio}
           />
 
           <section className='song-signin-article'>

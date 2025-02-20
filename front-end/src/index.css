@@ -585,6 +585,7 @@ img {
   gap: 15px;
 }
 .player-progress p {
+  width: 50px;
   font-size: var(--title-size);
   font-weight: var(--semibold-weight);
 }
