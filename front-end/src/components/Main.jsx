@@ -6,6 +6,7 @@ import { artistArray } from '../assets/database/artists';
 import { songsArray } from '../assets/database/songs';
 import { useLocation } from 'react-router-dom';
 import AsideLibrary from './AsideLibrary';
+import MainFooter from './MainFooter';
 
 const Main = ({ type }) => {
   const { pathname } = useLocation();
@@ -37,6 +38,8 @@ const Main = ({ type }) => {
         ) : (
           <></>
         )}
+
+        <MainFooter />
       </div>
     </main>
   );
