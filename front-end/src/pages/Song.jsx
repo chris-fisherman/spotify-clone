@@ -8,6 +8,7 @@ import WhiteButton from '../components/WhiteButton';
 import SongsList from '../components/SongsList';
 import { songsArray } from '../assets/database/songs';
 import { artistArray } from '../assets/database/artists';
+import MainFooter from '../components/MainFooter';
 
 const Song = () => {
   const { id } = useParams();
@@ -71,6 +72,7 @@ const Song = () => {
   return (
     <main>
       <AsideLibrary />
+
       <div className='song-main'>
         <header className='song-header'>
           <div className='song-header__img-container'>
@@ -117,6 +119,8 @@ const Song = () => {
               <p>{artist}</p>
             </div>
           </Link>
+
+          <MainFooter />
 
           {/* <SongsList /> */}
         </div>

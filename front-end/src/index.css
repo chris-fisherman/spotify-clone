@@ -346,6 +346,10 @@ img {
   transform: scale(1.05);
   color: var(--title-color);
 }
+.artist-main .main-footer,
+.song-main .main-footer {
+  margin-top: 80px;
+}
 
 /**************************/
 /**** SONG LIST ****/

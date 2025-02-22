@@ -9,6 +9,7 @@ import SongsList from '../components/SongsList';
 import AsideLibrary from '../components/AsideLibrary';
 import { artistArray } from '../assets/database/artists';
 import { songsArray } from '../assets/database/songs';
+import MainFooter from '../components/MainFooter';
 
 const Artist = () => {
   const { id } = useParams();
@@ -29,12 +30,14 @@ const Artist = () => {
   return (
     <main>
       <AsideLibrary />
+
       <div className='artist-main'>
         <img
           className='artist-main__img'
           src={artistObj.banner}
           alt={`${artistObj.name} image`}
         />
+
         <header className='artist-header'>
           <div>
             <FontAwesomeIcon icon={faCertificate} />
@@ -42,6 +45,7 @@ const Artist = () => {
           </div>
           <h2>{artistObj.name}</h2>
         </header>
+
         <div className='artist-body'>
           <div className='artist-body__btn-container'>
             <Link to={`/song/${randomIdFromArtist}`} title='Play random song'>
@@ -54,7 +58,10 @@ const Artist = () => {
               <FontAwesomeIcon icon={faEllipsis} />
             </button>
           </div>
+
           <SongsList songsArray={songsArrayFromArtist} />
+
+          <MainFooter />
         </div>
       </div>
     </main>
