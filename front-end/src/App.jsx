@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Header from './components/Header';
+import BottomBanner from './components/BottomBanner';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Artists from './pages/Artists';
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='/songs' element={<Songs />} />
         <Route path='/song/:id' element={<Song />} />
       </Routes>
+      <BottomBanner />
     </BrowserRouter>
   );
 };

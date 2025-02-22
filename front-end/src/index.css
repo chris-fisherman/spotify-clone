@@ -830,3 +830,35 @@ img {
   padding: 8px 15px;
   width: fit-content;
 }
+
+/**************************/
+/**** BOTTOM BANNER ****/
+/**************************/
+.bottom-banner {
+  margin: 0 10px 10px 10px;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-image: linear-gradient(
+    to right,
+    #ae2896,
+    #8b53ba,
+    #6e77d7,
+    #519bf5
+  );
+}
+.bottom-banner__section {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.bottom-banner__section h2 {
+  font-size: var(--subtitle-size);
+  font-weight: var(--bold-weight);
+}
+.bottom-banner__section p {
+  font-size: 14px;
+  font-weight: var(--semibold-weight);
+}
