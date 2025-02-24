@@ -935,6 +935,19 @@ img {
   .main-footer__copyright p {
     font-size: 12px;
   }
+  .item-section__header-title--bigger {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  #bigger-list-mobile {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 10px 0;
+  }
+  .bigger-items .item-section__single-item {
+    grid-row-start: auto;
+    grid-row-end: auto;
+  }
 }
 
 @media (max-width: 1200px) {

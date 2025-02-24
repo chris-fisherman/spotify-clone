@@ -9,6 +9,7 @@ const ItemList = ({ title, items, itemsArray, path, idPath }) => {
   const isHome = pathname === '/';
   const finalItems = isHome ? items : Infinity;
   const listClassName = isHome ? <></> : 'bigger-items';
+  const listIdName = isHome ? <></> : 'bigger-list-mobile';
   return (
     <div className='item-section'>
       <header className='item-section__header'>
@@ -30,7 +31,7 @@ const ItemList = ({ title, items, itemsArray, path, idPath }) => {
           <></>
         )}
       </header>
-      <ul className={`item-section__list ${listClassName}`}>
+      <ul className={`item-section__list ${listClassName}`} id={listIdName}>
         {itemsArray
           .filter((currentValue, index) => index < finalItems)
           .map((currObject, index) => (
