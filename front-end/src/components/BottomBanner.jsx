@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const BottomBanner = () => {
   return (
-    <Link to={'#'} className='bottom-banner'>
+    <div className='bottom-banner'>
       <section className='bottom-banner__section'>
         <h2>Spotify sample</h2>
         <p>
@@ -15,7 +15,7 @@ const BottomBanner = () => {
       </section>
 
       <WhiteButton body={'Register for free'} />
-    </Link>
+    </div>
   );
 };
 
