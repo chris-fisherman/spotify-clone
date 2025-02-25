@@ -869,6 +869,21 @@ img {
 /**************************/
 /**** MEDIA QUERIES ****/
 /**************************/
+@media (max-width: 1200px) {
+  .aside-library {
+    display: none;
+  }
+  .main {
+    width: 100%;
+    flex-direction: column;
+    margin: 0 10px 10px 10px;
+  }
+  .artist-main {
+    width: 100%;
+    margin: 0 10px 10px 10px;
+  }
+}
+
 @media (max-width: 600px) {
   .main {
     padding: 10px;
@@ -939,7 +954,7 @@ img {
     font-size: 18px;
     margin: 10px 0;
   }
-  #bigger-list-mobile {
+  .bigger-list-mobile {
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin: 10px 0;
@@ -948,15 +963,65 @@ img {
     grid-row-start: auto;
     grid-row-end: auto;
   }
-}
-
-@media (max-width: 1200px) {
-  .aside-library {
+  /* artist section */
+  .artist-header {
+    padding: 10px;
+    margin-top: -80px;
+    background-image: linear-gradient(to top, #222, transparent);
+  }
+  .artist-header h2 {
+    font-size: 30px;
+    font-weight: 800;
+  }
+  .artist-header > div {
+    gap: 5px;
+  }
+  .artist-header svg {
+    width: 15px;
+    height: 15px;
+  }
+  .artist-header > div p {
+    font-size: 12px;
+  }
+  .artist-body {
+    padding: 20px 15px;
+  }
+  .artist-body__btn-container {
+    gap: 15px;
+  }
+  .artist-body__play-icon svg {
+    width: 45px;
+    height: 45px;
+  }
+  .artist-body__follow-btn {
+    font-size: 12px;
+  }
+  .artist-body__ellipsis-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+  .song-list {
+    margin: 18px 0 0 0;
+  }
+  .song-list h3 {
+    font-size: 18px;
+  }
+  .song-list__list {
+    margin: 15px 0 25px 0;
+  }
+  .song-item {
+    padding: 7px 0;
+  }
+  .song-item__scnd-container {
     display: none;
   }
-  .main {
-    width: 100%;
-    flex-direction: column;
-    margin: 0 10px 10px 10px;
+  .song-list__see-more,
+  .song-list__see-less.show {
+    font-size: 12px;
+    margin-bottom: 0;
+  }
+  .artist-main .main-footer,
+  .song-main .main-footer {
+    margin-top: 60px;
   }
 }
