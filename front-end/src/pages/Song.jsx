@@ -10,6 +10,41 @@ import { songsArray } from '../assets/database/songs';
 import { artistArray } from '../assets/database/artists';
 import MainFooter from '../components/MainFooter';
 
+const ImgShadow = styled.div`
+  &:after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url(${({ $img }) => $img});
+    position: absolute;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: drop-shadow(0px 0px) blur(40px);
+    z-index: -1;
+  }
+`;
+
+const HeaderBackground = styled.div`
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url(${({ $img }) => $img});
+    position: absolute;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    filter: drop-shadow(0px 0px) blur(40px);
+    z-index: -2;
+  }
+`;
+
 const Song = () => {
   const { id } = useParams();
 
@@ -35,40 +70,6 @@ const Song = () => {
   );
   const randomIdFromArtist2 = songsArrayFromArtist[randomIndex2]._id;
 
-  const ImgShadow = styled.div`
-    &:after {
-      content: '';
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-image: url(${image});
-      position: absolute;
-      background-size: contain;
-      background-repeat: no-repeat;
-      filter: drop-shadow(0px 0px) blur(40px);
-      z-index: -1;
-    }
-  `;
-
-  const HeaderBackground = styled.div`
-    &:before {
-      content: '';
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-image: url(${image});
-      position: absolute;
-      background-size: cover;
-      background-repeat: no-repeat;
-      filter: drop-shadow(0px 0px) blur(40px);
-      z-index: -2;
-    }
-  `;
-
   return (
     <main>
       <AsideLibrary />
@@ -77,7 +78,7 @@ const Song = () => {
         <header className='song-header'>
           <div className='song-header__img-container'>
             <img src={image} alt={`${name} image`} />
-            <ImgShadow />
+            <ImgShadow $img={image} />
           </div>
           <section className='song-header__texts-container'>
             <p>Song</p>
@@ -91,7 +92,7 @@ const Song = () => {
               <p className='texts-container__below-texts--gray'>{duration}</p>
             </div>
           </section>
-          <HeaderBackground />
+          <HeaderBackground $img={image} />
         </header>
 
         <div className='song-body'>
